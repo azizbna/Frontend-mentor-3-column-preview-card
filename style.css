@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+:root {
+    --white: hsla(0, 0%, 100%, 0.75);
+    --gray: hsl(0, 0%, 95%);
+    --orange: hsl(31, 77%, 52%);
+    --cyan: hsl(184, 100%, 22%);
+    --dark-cyan: hsl(179, 100%, 13%);
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    font-size: 15px;
+}
+
+body {
+    background-color: var(--gray);
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 1em;
+}
+
+main {
+    display: flex;
+    width: inherit;
+    height: calc(100% - 2vh);
+    /* substracted 2vh for the attribution*/
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-flow: wrap;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    height: 500px;
+}
+
+
+.sedans {
+    background-color: var(--orange);
+    color: var(--orange);
+    border-radius: 10px 0 0 10px;
+}
+
+.suvs {
+    background-color: var(--cyan);
+    color: var(--cyan);
+}
+
+.luxury {
+    background-color: var(--dark-cyan);
+    color: var(--dark-cyan);
+    border-radius: 0 10px 10px 0;
+}
+
+.card {
+    padding: 50px 40px 0 50px;
+}
+
+h2 {
+    color: var(--gray);
+    font-family: 'Big Shoulders Display', cursive;
+    font-size: 2.5em;
+    text-transform: uppercase;
+}
+
+.card p {
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--white);
+    height: 35%;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+.button {
+    background-color: var(--gray);
+    border-radius: 500px;
+    border: 2px solid var(--gray);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+    height: 10%;
+    margin-top: 25%;
+    transition: background-color 250ms linear, color 150ms ease-in;
+}
+
+.button p {
+    color: inherit;
+    font-weight: 400;
+    padding-bottom: 0.2em;
+}
+
+.button:hover,
+.button:focus {
+    color: white;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+
+@media screen and (max-width:1080px) {
+    .container {
+        grid-template-columns: repeat(3, 275px);
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .button p {
+        padding-bottom: 0.5em;
+    }
+}
+
+.attribution {
+    font-size: 1.5vh;
+    text-align: center;
+    color: #00403f;
+}
+
+.attribution a {
+    color: #29978a;
+}
+
+@media screen and (max-width:850px) {
+
+    .container {
+        grid-template-columns: 320px;
+        grid-auto-flow: row;
+    }
+
+    .card {
+        height: 300px;
+        padding: 35px 50px 35px 35px;
+    }
+
+    .sedans {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .luxury {
+        border-radius: 0 0 10px 10px;
+    }
+
+    .button {
+        margin: 0;
+        width: 65%;
+        height: 13%;
+    }
+
+    .attribution {
+        display: none;
+    }
+}
