@@ -45,7 +45,7 @@ Users should be able to:
 
 ## Author
 
-- Frontend Mentor - [@yazizbna](https://www.frontendmentor.io/profile/azizbna)
+- Frontend Mentor - [@azizbna](https://www.frontendmentor.io/profile/azizbna)
 - Twitter - [@azeezbna](https://www.twitter.com/azeezbna)
 
 
