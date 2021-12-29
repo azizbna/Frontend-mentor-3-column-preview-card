@@ -144,11 +144,17 @@ h2 {
 }
 
 @media screen and (max-width:850px) {
+    main {
+        height: 1400px;
+        align-content: space-between;
+    }
 
     .container {
         -ms-grid-columns: 320px;
         grid-template-columns: 320px;
         grid-auto-flow: row;
+        margin-top: 60px;
+        height: calc(3*350px);
     }
 
     .card {
