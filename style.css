@@ -23,18 +23,28 @@ body {
 }
 
 main {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     width: inherit;
     height: calc(100% - 2vh);
     /* substracted 2vh for the attribution*/
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    -ms-flex-flow: wrap;
     flex-flow: wrap;
 }
 
 .container {
+    display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (300px)[3];
     grid-template-columns: repeat(3, 300px);
     height: 500px;
 }
@@ -81,12 +91,19 @@ h2 {
     background-color: var(--gray);
     border-radius: 500px;
     border: 2px solid var(--gray);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
     justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     width: 70%;
     height: 10%;
     margin-top: 25%;
+    -webkit-transition: background-color 250ms linear, color 150ms ease-in;
     transition: background-color 250ms linear, color 150ms ease-in;
 }
 
@@ -106,6 +123,7 @@ h2 {
 
 @media screen and (max-width:1080px) {
     .container {
+        -ms-grid-columns: (275px)[3];
         grid-template-columns: repeat(3, 275px);
     }
 
@@ -131,6 +149,7 @@ h2 {
 @media screen and (max-width:850px) {
 
     .container {
+        -ms-grid-columns: 320px;
         grid-template-columns: 320px;
         grid-auto-flow: row;
     }
@@ -158,3 +177,10 @@ h2 {
         display: none;
     }
 }
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 2 version
+*/
