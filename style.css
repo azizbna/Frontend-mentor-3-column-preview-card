@@ -1,195 +1,262 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@400;500;700&display=swap');
 
 :root {
-    --white: hsla(0, 0%, 100%, 0.75);
-    --gray: hsl(0, 0%, 95%);
-    --orange: hsl(31, 77%, 52%);
-    --cyan: hsl(184, 100%, 22%);
-    --dark-cyan: hsl(179, 100%, 13%);
+    --dark-magenta: hsl(300, 43%, 22%);
+    --soft-pink: hsl(333, 80%, 67%);
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+
 }
 
-html,
-body {
+body,
+html {
     width: 100%;
     height: 100%;
     margin: 0;
-    font-size: 15px;
 }
 
 body {
-    background-color: var(--gray);
-    font-family: 'Red Hat Display', sans-serif;
-    font-size: 1em;
+    font-size: 15px;
+    font-family: 'Spartan', sans-serif;
+    background: url(./images/bg-pattern-top-desktop.svg) left top no-repeat, url(./images/bg-pattern-bottom-desktop.svg) right bottom no-repeat;
+    background-size: 40%,75%;
 }
 
 main {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     width: inherit;
     height: calc(100% - 2vh);
-    /* substracted 2vh for the attribution*/
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -ms-flex-flow: wrap;
-        flex-flow: wrap;
+    /*Substracted 2vh for the attribution*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.container {
-    display: -ms-grid;
+.component {
+    margin: 30px;
+    width: 1200px;
+    height: 550px;
     display: grid;
-    -ms-grid-columns: (300px)[3];
-    grid-template-columns: repeat(3, 300px);
-    height: 500px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-row-gap: 50px;
+}
+
+/*Description*/
+
+
+
+.description h1 {
+    color: var(--dark-magenta);
+    width: 80%;
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.1em;
+}
+
+.description p {
+    color: var(--dark-grayish-magenta);
+    font-size: 1em;
+    width: 80%;
+    font-weight: 500;
+    line-height: 1.8em;
+}
+
+/* Ratings*/
+.ratings {
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+}
+
+div.review:nth-of-type(1) {
+    margin-right: 120px;
+}
+
+div.review:nth-of-type(2) {
+    margin-right: 60px;
 }
 
 
-.sedans {
-    background-color: var(--orange);
-    color: var(--orange);
-    border-radius: 10px 0 0 10px;
+.review::before {
+    content: url(./images/icon-star.svg) "    "url(./images/icon-star.svg) "    "url(./images/icon-star.svg) "    "url(./images/icon-star.svg) "    "url(./images/icon-star.svg)"";
+    margin: 0px 30px 0px 20px;
 }
 
-.suvs {
-    background-color: var(--cyan);
-    color: var(--cyan);
+.review {
+    background-color: var(--light-grayish-magenta);
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    width: 70%;
+    color: var(--dark-magenta);
+    font-weight: 700;
+    font-size: 1em;
 }
 
-.luxury {
-    background-color: var(--dark-cyan);
-    color: var(--dark-cyan);
-    border-radius: 0 10px 10px 0;
+/*Cards*/
+
+.card-section {
+    grid-column: span 2;
+    display: flex;
 }
 
 .card {
-    padding: 50px 40px 0 50px;
-}
-
-h1 {
-    font-size:0px;
-}
-
-
-h2 {
-    color: var(--gray);
-    font-family: 'Big Shoulders Display', cursive;
-    font-size: 2.5em;
-    text-transform: uppercase;
+    padding-block: 3em;
+    padding-inline: 35px;
+    background-color: var(--dark-magenta);
+    width: calc(100%/3);
+    margin: 0 15px 0 15px;
+    border-radius: 8px;
+    height: 150px;
 }
 
 .card p {
-    font-family: 'Lexend Deca', sans-serif;
-    color: var(--white);
-    height: 35%;
-    font-size: 15px;
-    line-height: 1.7;
+    color: var(--light-grayish-magenta);
+    font-size: 0.9em;
+    line-height: 1.6em;
+    margin-top: 20px;
 }
 
+.card:first-child {
+    margin-left: 0;
+}
 
-.button {
-    background-color: var(--gray);
-    border-radius: 500px;
-    border: 2px solid var(--gray);
-    display: -webkit-box;
-    display: -ms-flexbox;
+.card:nth-child(2) {
+    margin-top: 20px;
+}
+
+.card:nth-child(3) {
+    margin-top: 40px;
+}
+
+/* Name and image*/
+.info {
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    width: 70%;
-    height: 10%;
-    margin-top: 25%;
-    -webkit-transition: background-color 250ms linear, color 150ms ease-in;
-    transition: background-color 250ms linear, color 150ms ease-in;
+    align-items: center;
+    font-size: 16px;
 }
 
-.button p {
-    line-height: 1 !important;
-    color: inherit;
-    font-weight: 400;
+.info img {
+    border-radius: 50%;
+    width: 15%;
+    height: 15%;
 }
 
-.button:hover,
-.button:focus {
-    color: white;
-    background-color: inherit;
-    cursor: pointer;
+.name::first-line {
+    color: var(--light-grayish-magenta);
+    font-weight: 500;
 }
 
-
-@media screen and (max-width:1080px) {
-    .container {
-        -ms-grid-columns: (275px)[3];
-        grid-template-columns: repeat(3, 275px);
-    }
-
-    .button {
-        width: 100%;
-    }
-
+.name {
+    line-height: 1.5em;
+    font-size: 0.8em;
+    color: var(--soft-pink);
+    margin-left: 20px;
 }
 
 .attribution {
-    font-size: 1.5vh;
+    font-size: 1vh;
     text-align: center;
-    color: #00403f;
 }
 
 .attribution a {
-    color: #29978a;
+    color: hsl(228, 45%, 44%);
 }
 
-@media screen and (max-width:850px) {
+@media only screen and (max-width:1180px) {
     main {
-        height: 1400px;
-        align-content: space-between;
+        transform: scale(0.8);
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    main {
+        transform: scale(0.7);
+    }
+}
+
+@media only screen and (max-width:960px) {
+    body {
+        text-align: center;
+        background: url(./images/bg-pattern-top-mobile.svg) left top no-repeat, url(./images/bg-pattern-bottom-mobile.svg) right bottom no-repeat;
+        background-size: 100%,60%;
+    }
+    
+
+    main {
+        transform: scale(1);
+        height: 1550px;
+        display: flex;
+        align-items: flex-start;
+
     }
 
-    .container {
-        -ms-grid-columns: 320px;
-        grid-template-columns: 320px;
-        grid-auto-flow: row;
-        margin-top: 60px;
-        height: calc(3*350px);
+    .component {
+        margin: 50px;
+        width: 350px;
+        height: 90vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr)
+    }
+
+    div.description h1,
+    div.description p {
+        margin-inline: auto;
+    }
+
+    .description h1 {
+        width: 100%;
+        font-size: 2em;
+    }
+
+    .description p {
+        font-size: 12px;
+        margin-top: 25px;
+        width: 100%;
+        font-weight: 500;
+        line-height: 1.5em;
+    }
+
+
+
+
+    .ratings {
+        align-items: center;
+    }
+
+    .review::before {
+        display: block;
+        margin: 0px 0 10px 0px;
+    }
+
+    .review {
+        width: 100%;
+    }
+
+
+    div.review:nth-of-type(1),
+    div.review:nth-of-type(2) {
+        margin-right: 0;
+    }
+
+    div.review:nth-of-type(1) {
+        margin-top: 0;
+    }
+
+    .card:first-child {
+        margin-left: 15px;
+    }
+
+    .card-section {
+        flex-direction: column;
+        grid-column: span 1;
+        align-items: center;
     }
 
     .card {
-        height: 350px;
-        padding: 35px 50px 35px 35px;
-    }
-
-    .sedans {
-        border-radius: 10px 10px 0 0;
-    }
-
-    .luxury {
-        border-radius: 0 0 10px 10px;
-    }
-
-    .button {
-        margin:35px;
-        width: 65%;
-        height: 13%;
-    }
-
-    .attribution {
-        display: none;
+        width: 100%;
+        padding-inline: 20px;
+        text-align: left;
     }
 }
-
-
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.3.6,
-* Autoprefixer: v10.3.1
-* Browsers: last 2 version
-*/
